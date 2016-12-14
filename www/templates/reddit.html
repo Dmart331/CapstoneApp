@@ -1,0 +1,22 @@
+<ion-view view-title="Reddit">
+  <ion-content class="padding">
+   <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadNewStories()">
+  </ion-refresher>
+ 	<div class="list">
+ 	<a class="item item-thumbnail-left" href="{{story.url}}" target="_blank" ng-repeat="story in stories track by story.id" >
+ 	<img ng-src="{{story.thumbnail || images/ionic.png}}" ng-if="story.thumbnail.startsWith('http' || 'https')">
+	<h2 class="story-title">{{story.title}}</h2>
+  <p>
+<span am-time-ago="story.created_utc | amFromUnix"> </span> - {{story.domain}}</p>
+ 	</a>
+ 	</div>
+    <ion-infinite-scroll
+     on-infinite="loadOlderStories()"
+      distance="1%">
+  </ion-infinite-scroll>
+  </ion-content>
+ 	</div>
+  </ion-content>
+</ion-view>
