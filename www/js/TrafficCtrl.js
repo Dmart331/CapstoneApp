@@ -1,14 +1,15 @@
-app.controller('TrafficCtrl', ['$scope', function($scope) {
+app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compile) {
+
     var myLatLng;
     function initialize() {
 
         navigator.geolocation.getCurrentPosition(function(position){
-            myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        })
+            myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+        
         var mapOptions = {
             center: myLatLng,
-            zoom: 16,
-            disableDefaultUI: true,// DISABLE MAP TYPE
+            zoom: 13,
+            disableDefaultUI: true, // DISABLE MAP TYPE
             scrollwheel: true
         };
         var map = new google.maps.Map(document.getElementById('map'),
@@ -22,12 +23,13 @@ app.controller('TrafficCtrl', ['$scope', function($scope) {
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
         var infowindow = new google.maps.InfoWindow();
         var marker = new google.maps.Marker({
+            position:myLatLng,
             map: map
+
         });
 
         var trafficLayer = new google.maps.TrafficLayer();
         trafficLayer.setMap(map);
-
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.open(map, marker);
         });
@@ -36,28 +38,28 @@ app.controller('TrafficCtrl', ['$scope', function($scope) {
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
             infowindow.close();
             var place = autocomplete.getPlace();
+            console.log(place);
             if (!place.geometry) {
-                map.setCenter(myLatLng)
+                return;
             }
             if (place.geometry.viewport) {
                 map.fitBounds(place.geometry.viewport);
             } else {
                 map.setCenter(place.geometry.location);
-                map.setZoom(16);
+                map.setZoom(17);
             }
             // Set the position of the marker using the place ID and location.
             marker.setPlace( /** @type {!google.maps.Place} */ ({
-                placeId: place.place_id,
+                placeId: place.name,
                 location: place.geometry.location
             }));
-            console.log("place", place);
             marker.setVisible(true);
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-                '<br>' +
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + '<br>' +
                 place.formatted_address + '</div>');
             infowindow.open(map, marker);
         });
+    })
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
     // Run the initialize function when the window has finished loading.
+    ionic.Platform.ready(initialize);
 }])
