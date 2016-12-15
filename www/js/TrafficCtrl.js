@@ -8,7 +8,7 @@ angular.element(container).on("click", function() {
 document.getElementById('pac-input').blur();
 });
 };
-
+    
     var myLatLng;
     function initialize() {
 
