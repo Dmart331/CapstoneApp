@@ -1,4 +1,13 @@
 app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compile) {
+    $scope.disableTap = function() {
+var container = document.getElementsByClassName('pac-container');
+angular.element(container).attr('data-tap-disabled', 'true');
+var backdrop = document.getElementsByClassName('backdrop');
+angular.element(backdrop).attr('data-tap-disabled', 'true');
+angular.element(container).on("click", function() {
+document.getElementById('pac-input').blur();
+});
+};
 
     var myLatLng;
     function initialize() {
