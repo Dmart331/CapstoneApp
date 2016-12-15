@@ -1,19 +1,7 @@
 <ion-view title="Map">
 	<ion-content ng-controller="TrafficCtrl">
-    <div id="type-selector" class="controls">
-      <input type="radio" name="type" id="changetype-all" checked="checked">
-      <label for="changetype-all">All</label>
-
-      <input type="radio" name="type" id="changetype-establishment">
-      <label for="changetype-establishment">Establishments</label>
-
-      <input type="radio" name="type" id="changetype-address">
-      <label for="changetype-address">Addresses</label>
-
-      <input type="radio" name="type" id="changetype-geocode">
-      <label for="changetype-geocode">Geocodes</label>
-    </div>
-    <input id="pac-input" type="text" placeholder="Search Location" data-tap-disabled="true" ng-change='disableTap()' ng-model="search">
+    
+    <input id="pac-input" type="text" placeholder="Search Location to get Traffic" data-tap-disabled="true" ng-change='disableTap()' ng-model="search">
 
     <div id="map"></div>
 	</ion-content>

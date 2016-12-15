@@ -5,7 +5,7 @@
       /* Optional: Makes the sample page fill the window. */
       
       .controls {
-        margin-top: 0px;
+        margin-top: 2px;
         border: 1px solid transparent;
         border-radius: 2px 0 0 2px;
         box-sizing: border-box;
@@ -18,13 +18,20 @@
 
       #pac-input {
         background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
+        font-family: Helvetica;
+        font-size: 1.5em;
+        font-weight: 600;
         padding: 0 11px 0 13px;
         text-overflow: ellipsis;
-        width: 300px;
+        height: 55px;;
+        width: 75%;
+        margin-left: 13%;
+        margin-top:5%;
+        border: 1px transparent;
+        border-radius: 20px;
+        box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
+        text-align: center;
+
       }
 
       #pac-input:focus {
@@ -32,7 +39,7 @@
       }
 
       .pac-container {
-        font-family: Roboto;
+        font-family: Helvetica;
       }
 
       #type-selector {
