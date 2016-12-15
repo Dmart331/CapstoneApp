@@ -1,5 +1,20 @@
 <ion-view title="Map">
-	<ion-content scroll="true">
-		<div id="map" data-tap-disabled="true"></div>
+	<ion-content ng-controller="TrafficCtrl">
+    <div id="type-selector" class="controls">
+      <input type="radio" name="type" id="changetype-all" checked="checked">
+      <label for="changetype-all">All</label>
+
+      <input type="radio" name="type" id="changetype-establishment">
+      <label for="changetype-establishment">Establishments</label>
+
+      <input type="radio" name="type" id="changetype-address">
+      <label for="changetype-address">Addresses</label>
+
+      <input type="radio" name="type" id="changetype-geocode">
+      <label for="changetype-geocode">Geocodes</label>
+    </div>
+    <input id="pac-input" class="controls" type="text"
+        placeholder="Enter a location">
+    <div id="map"></div>
 	</ion-content>
 </ion-view>
