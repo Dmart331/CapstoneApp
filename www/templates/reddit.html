@@ -5,18 +5,20 @@
     on-refresh="loadNewStories()">
   </ion-refresher>
  	<div class="list">
- 	<a class="item item-thumbnail-left" href="{{story.url}}" target="_blank" style="background-color:#E7E5E4 !important" ng-repeat="story in stories track by story.id" >
+  
+   <div >
+  <a class="item item-thumbnail-left" href="{{story.url}}" target="_blank"  ng-repeat="story in stories track by story.id" ng-class-odd="'odd'" ng-class-even="'even'">
  	<img ng-src="{{story.thumbnail || images/ionic.png}}" ng-if="story.thumbnail.startsWith('http' || 'https')">
 	<h2 class="story-title">{{story.title}}</h2>
   <br>
   <p>
 <span am-time-ago="story.created_utc | amFromUnix"> </span> 
-
 - {{story.domain}}
-
 </p>
- 	</a>
- 	</div>
+  </a >
+</div>
+ 	</div ng-if="!$last" >&nbsp;
+  &nbsp;
     <ion-infinite-scroll
      on-infinite="loadOlderStories()"
       distance="1%">
