@@ -6,11 +6,11 @@
       <label class="item item-input-wrapper">   
       <input type="text" placeholder="Placeholder 1" ng-model="zipObj.zip">
       </label>
-      <button class="button" ng-click="funky(zipObj.zip)" ng-show="true">button</button>
+      <button class="button" ng-click="funky(zipObj.zip)" ng-show="true">Search</button>
    </div>
          </ion-item>
          <br>
-
+         <div class="style-me">
       <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in weather[0]" type="item-text-wrap" href="#/tab/Weather/Weather-Detail">
         <img ng-src="{{item.current_observation.icon_url}}">
         <h2>{{item.current_observation.display_location.city}} <br>{{item.current_observation.temp_f}}&deg;</h2>

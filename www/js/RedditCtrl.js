@@ -1,4 +1,5 @@
 app.controller('RedditCtrl', function($scope, $location, $http) {
+    
     $scope.changeView = function(view) {
         $location.path(view);
     }
@@ -6,7 +7,7 @@ app.controller('RedditCtrl', function($scope, $location, $http) {
 
     function loadStories(params, callback) {
         var stories = [];
-        $http.get('https://www.reddit.com/hot.json', {
+        $http.get('https://www.reddit.com/r/earthporn.json', {
                 params: params
             })
             .success(function(response) {
