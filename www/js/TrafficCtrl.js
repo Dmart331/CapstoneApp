@@ -87,6 +87,5 @@ app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compil
     }
     // Run the initialize function when the window has finished loading.
     ionic.Platform.ready(initialize);
-    annyang.start();
-
+    
 }])
