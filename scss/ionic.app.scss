@@ -15,15 +15,16 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 
-$base-background-color:           #E7E5E4 !default;
+$base-background-color: #E7E5E4 !default;
 $assertive: #9CB5B5 !default;
+$stable: #9CB5B5 !default;
 
 .background{
 	font-family: helvetica;
 }
 
 
-
+//
 #map {
 	width: 100%;
 	height: 100%;
@@ -31,16 +32,15 @@ $assertive: #9CB5B5 !default;
       /* Optional: Makes the sample page fill the window. */
       
   .controls {
-    margin-top: 2px;
-    border: 1px solid transparent;
-    border-radius: 2px 0 0 2px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    height: 32px;
-    outline: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-
-  }
+        margin-top: 10px;
+        border: 1px solid transparent;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        height: 32px;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+      }
 
   #pac-input {
     background-color: #fff;
@@ -58,6 +58,23 @@ $assertive: #9CB5B5 !default;
     box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
     text-align: center;
 
+  }
+
+  #pac-input-destination{
+  	    background-color: #fff;
+    font-family: Helvetica;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    height: 55px;;
+    width: 75%;
+    margin-left: 13%;
+    margin-top:5%;
+    border: 1px transparent;
+    border-radius: 20px;
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
   }
 
   #pac-input:focus {
@@ -193,3 +210,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.wrapping-list .item-content, .wrapping-list .item .p {
+    overflow: initial;
+    white-space: initial;
+}
