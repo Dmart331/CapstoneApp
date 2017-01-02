@@ -14,7 +14,7 @@ app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compil
 
     var myLatLng;
 
-     var initialize = function() {
+    function var initialize = function() {
         navigator.geolocation.getCurrentPosition(function(position) {
             myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude)
 
@@ -40,6 +40,7 @@ app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compil
 
             annyang.addCommands(commands);
             annyang.debug();
+            annyang.start();
             // Create the autocomplete helper, and associate it with
             // an HTML text input box.
 
@@ -87,5 +88,4 @@ app.controller('TrafficCtrl', ['$scope', function($scope, $ionicLoading, $compil
     }
     // Run the initialize function when the window has finished loading.
     ionic.Platform.ready(initialize);
-    
 }])
