@@ -51,7 +51,7 @@ var app = angular.module('TrafficApp', ['ionic' , 'angularMoment'])
     }
   })
   .state('sidemenu.reddit' , {
-    url:'/Reddit',
+    url:'/reddit',
     views: {
       'menuContent' :{
         controller: 'RedditCtrl',
@@ -60,7 +60,7 @@ var app = angular.module('TrafficApp', ['ionic' , 'angularMoment'])
     }
   })
   .state('sidemenu.weather' , {
-    url:'/Weather',
+    url:'/weather',
     views: {
       'menuContent' :{
         controller: 'WeatherCtrl',
@@ -70,16 +70,3 @@ var app = angular.module('TrafficApp', ['ionic' , 'angularMoment'])
   })
 })
 
-  var commands = {
-                'show me *tag': function(tag) {
-                    changeView(tag);
-                }
-            }
-
-            annyang.addCommands(commands);
-            annyang.debug();
-            annyang.start();
-
-var changeView = function(tag){
-
-}
