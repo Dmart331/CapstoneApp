@@ -4,7 +4,7 @@
      <div class="list">
    <div class="item item-input-inset">
       <label class="item item-input-wrapper">   
-      <input type="text" placeholder="Placeholder 1" ng-model="zipObj.zip">
+      <input type="text" placeholder="Enter Zip for Current Conditions" ng-model="zipObj.zip">
       </label>
       <button class="button" ng-click="funky(zipObj.zip)" ng-show="true">Search</button>
    </div>
@@ -16,14 +16,13 @@
         <h2>{{item.current_observation.display_location.city}} <br>{{item.current_observation.temp_f}}&deg;</h2>
         <p>{{item.current_observation.icon}}</p>
       </ion-item>
-      </div>
-      <br>
-
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in weatherDetail[0]" type="item-text-wrap"">
+        
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="item in weatherDetail[0]" type="item-text-"">
         <!-- <img ng-src="{{item.daily.summary}}"> -->
-        <p>{{item.daily.summary}} <br></p>
+        <p>{{item.hourly.summary}}<br> High Temp: {{item.daily.data[0].apparentTemperatureMax}}
+</p>
         <!-- <p>{{item.daily.icon}}</p> -->
       </ion-item>
-      
+      </div>
   </ion-content>
 </ion-view>
