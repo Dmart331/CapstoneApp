@@ -23,7 +23,6 @@ var app = angular.module('TrafficApp', ['ionic' , 'angularMoment'])
   });
 })
 
-
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('side/home')
 
