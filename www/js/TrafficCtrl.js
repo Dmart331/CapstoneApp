@@ -8,6 +8,22 @@ angular.element(container).on("click", function() {
 document.getElementById('pac-input').blur();
 });
 }
+
+var input = /** @type {HTMLInputElement} */ (
+            document.getElementById('pac-input'));
+var commands = {
+                 'rise find *val': function(val) {
+                    doThis(val);
+                 }
+              }
+
+ var doThis = function(val) {
+                input.value = val + " ";
+              }   
+
+              annyang.addCommands(commands);
+                annyang.debug();
+                annyang.start();          
     var myLatLng;
     function initialize() {
 
