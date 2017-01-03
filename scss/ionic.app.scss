@@ -108,6 +108,8 @@ ion-item.item-remove-animate, .item-avatar, .item-icon-right{
 
 
 h1.elegantshadow {	
+	-webkit-animation: fadeInUp 2500ms;
+ 	animation: fadeInUp 2500ms;
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
   	font-size: 5.5em;
   	padding: 40px 25px;
@@ -150,6 +152,8 @@ h1.elegantshadow {
 
 .text-center
 {
+	-webkit-animation: fadeInUp 2500ms;
+ 	animation: fadeInUp 2500ms;
    color: #7a7c7f; 
    font-size: 1.50em; 
    font-family: "Libre Baskerville", serif; 
