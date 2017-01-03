@@ -38,7 +38,7 @@ app.controller('RedditCtrl', function($scope, $location, $http) {
         loadStories(params, function(newStories) {
             $scope.stories = newStories.concat($scope.stories);
             $scope.$broadcast('scorll.refreshComplete');
-            $scope.$apply();
+            
         })
     }
 })

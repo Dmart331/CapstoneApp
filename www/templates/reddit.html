@@ -7,7 +7,7 @@
  	<div class="list">
   
    <div >
-  <a class="item item-thumbnail-left" href="{{story.url}}" target="_blank"  ng-repeat="story in stories track by story.id" ng-class-odd="'odd'" ng-class-even="'even'">
+  <a class=" item item-thumbnail-left" href="{{story.url}}" target="_blank"  ng-repeat="story in stories track by story.id" ng-class-odd="'odd'" ng-class-even="'even'">
  	<img ng-src="{{story.thumbnail || images/ionic.png}}" ng-if="story.thumbnail.startsWith('http' || 'https')">
 	<h2 class="story-title">{{story.title}}</h2>
   <br>
