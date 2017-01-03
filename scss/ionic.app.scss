@@ -63,7 +63,11 @@ a.item-content {
 	-webkit-animation: pulse 1000ms;
  	animation: pulse 1000ms;
  	border-radius: 20px;
- 	box-shadow: rgba(0,0,0,.25) 0 3px 1px;
+ 	border: transparent 1px;
+}
+
+ion-item.item-remove-animate, .item-avatar, .item-icon-right{
+	border: none;
 }
   #pac-input-destination{
   	    background-color: #fff;
@@ -208,10 +212,6 @@ button.button:active {
    background: #1b435e;
    }
 
-div.style-me{
-  
-
-}
    
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
